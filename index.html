@@ -798,9 +798,7 @@
     <p class="main-description">
 
         اختر نوع المشكلة التي تواجهها
-
         <br>
-
         (ما يمكن معالجته عبر هذا القسم)
 
     </p>
@@ -1348,6 +1346,7 @@
         message.className =
             "message";
 
+
         message.innerText =
             "";
 
@@ -1374,88 +1373,35 @@
     }
 
 
-
     // =========================
     // إرسال الطلب
-    // الانتقال إلى success.html
     // =========================
 
     function submitRequest() {
 
-        // التأكد من اختيار الخدمة
-
-        if (
-            !selectedServiceId
-        ) {
-
-            showMessage(
-
-                "يرجى اختيار الخدمة أولاً",
-
-                "error"
-
+        const submitBtn =
+            document.getElementById(
+                "submitBtn"
             );
-
-            return;
-
-        }
-
-
-        // تجهيز رابط صفحة النجاح
-
-        const successPage =
-
-            "success.html" +
-
-            "?serviceId=" +
-
-            encodeURIComponent(
-                selectedServiceId
-            ) +
-
-            "&serviceName=" +
-
-            encodeURIComponent(
-                selectedServiceName
-            );
-
-
-        // الانتقال إلى success.html
-
-        window.location.href =
-            successPage;
-
-    }
-
-
-
-    // =========================
-    // عرض الرسائل
-    // =========================
-
-    function showMessage(
-        text,
-        type
-    ) {
 
         const message =
             document.getElementById(
                 "message"
             );
 
+        // تعطيل الزر
+        submitBtn.disabled = true;
+        submitBtn.innerText = "جاري الإرسال...";
 
-        message.innerHTML =
-            text;
-
-
-        message.className =
-            "message " +
-            type;
+        // محاكاة إرسال (يمكنك ربطها بـ API لاحقاً)
+        setTimeout(() => {
+            // التحويل لصفحة النجاح
+            window.location.href = "success.html";
+        }, 1500);
 
     }
 
 </script>
-
 
 </body>
 
