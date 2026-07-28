@@ -20,6 +20,10 @@
 
     <style>
 
+        /* =========================
+           GENERAL
+        ========================= */
+
         * {
             margin: 0;
             padding: 0;
@@ -118,9 +122,7 @@
 
         .logo-area h1 {
 
-            font-family:
-                Arial,
-                sans-serif;
+            font-family: Arial, sans-serif;
 
             font-size: 42px;
 
@@ -438,7 +440,7 @@
 
             text-align: center;
 
-            font-size: 26px;
+            font-size: 28px;
 
             margin-bottom: 25px;
 
@@ -448,111 +450,51 @@
 
 
         /* =========================
-           FORM GROUP
-        ========================= */
-
-        .form-group {
-
-            margin-bottom: 18px;
-
-        }
-
-
-        .form-group label {
-
-            display: block;
-
-            font-size: 16px;
-
-            font-weight: bold;
-
-            margin-bottom: 8px;
-
-        }
-
-
-        .form-group input,
-        .form-group textarea {
-
-            width: 100%;
-
-            padding:
-                14px
-                15px;
-
-            border:
-                1px solid #ccc;
-
-            border-radius: 8px;
-
-            font-family:
-                Tahoma,
-                Arial,
-                sans-serif;
-
-            font-size: 16px;
-
-            outline: none;
-
-            transition:
-                0.2s;
-
-        }
-
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-
-            border-color: #d32f36;
-
-            box-shadow:
-                0
-                0
-                0
-                2px
-                rgba(
-                    211,
-                    47,
-                    54,
-                    0.1
-                );
-
-        }
-
-
-        .form-group textarea {
-
-            min-height: 110px;
-
-            resize: vertical;
-
-        }
-
-
-        /* =========================
            SELECTED SERVICE
         ========================= */
 
-        .selected-service-box {
+        .selected-service {
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .selected-service label {
+
+            display: block;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .service-selected-box {
 
             width: 100%;
 
             padding:
-                15px
-                16px;
+                16px
+                18px;
 
-            background: #fff8d9;
+            background: #fafafa;
 
             border:
-                2px solid #ffc400;
+                2px solid #ccc;
 
-            border-radius: 8px;
+            border-radius: 10px;
 
             color: #333;
 
-            font-size: 17px;
+            font-size: 18px;
 
             font-weight: bold;
+
+            text-align: right;
 
         }
 
@@ -575,7 +517,7 @@
 
             border-radius: 9px;
 
-            font-size: 18px;
+            font-size: 19px;
 
             font-weight: bold;
 
@@ -590,15 +532,6 @@
         .submit-btn:hover {
 
             background: #b9141a;
-
-        }
-
-
-        .submit-btn:disabled {
-
-            background: #999;
-
-            cursor: not-allowed;
 
         }
 
@@ -624,20 +557,6 @@
             font-weight: bold;
 
             line-height: 1.7;
-
-        }
-
-
-        .message.success {
-
-            display: block;
-
-            background: #e8f7ed;
-
-            color: #187a3d;
-
-            border:
-                1px solid #a9dfbb;
 
         }
 
@@ -668,9 +587,7 @@
 
             text-align: center;
 
-            padding:
-                25px
-                15px;
+            padding: 25px 15px;
 
             margin-top: 20px;
 
@@ -804,6 +721,20 @@
 
             }
 
+
+            .service-selected-box {
+
+                font-size: 16px;
+
+            }
+
+
+            .submit-btn {
+
+                font-size: 18px;
+
+            }
+
         }
 
     </style>
@@ -886,6 +817,8 @@
     <div class="services">
 
 
+        <!-- كشف الحساب -->
+
         <div
             class="service-card"
             onclick="openForm(1, 'كشف الحساب')"
@@ -893,29 +826,44 @@
 
             <div class="service-icon">
 
-                <i class="fa-solid fa-file-invoice"></i>
+                <i
+                    class="fa-solid fa-file-invoice"
+                ></i>
 
             </div>
 
+
             <div class="service-info">
 
-                <h3>كشف الحساب</h3>
+                <h3>
+
+                    كشف الحساب
+
+                </h3>
+
 
                 <p>
+
                     الحصول على كشف حساب مفصل.
+
                 </p>
 
             </div>
 
+
             <div class="service-arrow">
 
-                <i class="fa-solid fa-chevron-left"></i>
+                <i
+                    class="fa-solid fa-chevron-left"
+                ></i>
 
             </div>
 
         </div>
 
 
+
+        <!-- رفع السقف -->
 
         <div
             class="service-card"
@@ -924,29 +872,44 @@
 
             <div class="service-icon">
 
-                <i class="fa-solid fa-arrow-up-right-dots"></i>
+                <i
+                    class="fa-solid fa-arrow-up-right-dots"
+                ></i>
 
             </div>
 
+
             <div class="service-info">
 
-                <h3>رفع السقف</h3>
+                <h3>
+
+                    رفع السقف
+
+                </h3>
+
 
                 <p>
+
                     زيادة الحد اليومي للتحويلات.
+
                 </p>
 
             </div>
 
+
             <div class="service-arrow">
 
-                <i class="fa-solid fa-chevron-left"></i>
+                <i
+                    class="fa-solid fa-chevron-left"
+                ></i>
 
             </div>
 
         </div>
 
 
+
+        <!-- التحويلات الخاطئة -->
 
         <div
             class="service-card"
@@ -955,29 +918,44 @@
 
             <div class="service-icon">
 
-                <i class="fa-solid fa-right-left"></i>
+                <i
+                    class="fa-solid fa-right-left"
+                ></i>
 
             </div>
 
+
             <div class="service-info">
 
-                <h3>التحويلات الخاطئة</h3>
+                <h3>
+
+                    التحويلات الخاطئة
+
+                </h3>
+
 
                 <p>
+
                     معالجة التحويلات التي تمت بالخطأ.
+
                 </p>
 
             </div>
 
+
             <div class="service-arrow">
 
-                <i class="fa-solid fa-chevron-left"></i>
+                <i
+                    class="fa-solid fa-chevron-left"
+                ></i>
 
             </div>
 
         </div>
 
 
+
+        <!-- العملات الأجنبية -->
 
         <div
             class="service-card"
@@ -986,29 +964,44 @@
 
             <div class="service-icon">
 
-                <i class="fa-solid fa-money-bill-transfer"></i>
+                <i
+                    class="fa-solid fa-money-bill-transfer"
+                ></i>
 
             </div>
 
+
             <div class="service-info">
 
-                <h3>خدمات العملات الأجنبية</h3>
+                <h3>
+
+                    خدمات العملات الأجنبية
+
+                </h3>
+
 
                 <p>
+
                     خدمات وإجراءات العملات الأجنبية.
+
                 </p>
 
             </div>
 
+
             <div class="service-arrow">
 
-                <i class="fa-solid fa-chevron-left"></i>
+                <i
+                    class="fa-solid fa-chevron-left"
+                ></i>
 
             </div>
 
         </div>
 
 
+
+        <!-- فيزا افتراضية -->
 
         <div
             class="service-card"
@@ -1017,29 +1010,44 @@
 
             <div class="service-icon">
 
-                <i class="fa-brands fa-cc-visa"></i>
+                <i
+                    class="fa-brands fa-cc-visa"
+                ></i>
 
             </div>
 
+
             <div class="service-info">
 
-                <h3>بطاقة فيزا افتراضية</h3>
+                <h3>
+
+                    بطاقة فيزا افتراضية
+
+                </h3>
+
 
                 <p>
+
                     خدمات البطاقة الافتراضية.
+
                 </p>
 
             </div>
 
+
             <div class="service-arrow">
 
-                <i class="fa-solid fa-chevron-left"></i>
+                <i
+                    class="fa-solid fa-chevron-left"
+                ></i>
 
             </div>
 
         </div>
 
 
+
+        <!-- تغيير رقم الهاتف -->
 
         <div
             class="service-card"
@@ -1048,31 +1056,44 @@
 
             <div class="service-icon">
 
-                <i class="fa-solid fa-phone"></i>
+                <i
+                    class="fa-solid fa-phone"
+                ></i>
 
             </div>
+
 
             <div class="service-info">
 
                 <h3>
+
                     تغيير رقم الهاتف القديم إلى رقم هاتف جديد
+
                 </h3>
 
+
                 <p>
+
                     تقديم طلب لتغيير رقم الهاتف المرتبط بالحساب.
+
                 </p>
 
             </div>
 
+
             <div class="service-arrow">
 
-                <i class="fa-solid fa-chevron-left"></i>
+                <i
+                    class="fa-solid fa-chevron-left"
+                ></i>
 
             </div>
 
         </div>
 
 
+
+        <!-- أسئلة الأمان -->
 
         <div
             class="service-card"
@@ -1081,29 +1102,44 @@
 
             <div class="service-icon">
 
-                <i class="fa-solid fa-shield-halved"></i>
+                <i
+                    class="fa-solid fa-shield-halved"
+                ></i>
 
             </div>
 
+
             <div class="service-info">
 
-                <h3>تفعيل أسئلة الأمان</h3>
+                <h3>
+
+                    تفعيل أسئلة الأمان
+
+                </h3>
+
 
                 <p>
+
                     تفعيل وإدارة أسئلة الأمان والحماية.
+
                 </p>
 
             </div>
 
+
             <div class="service-arrow">
 
-                <i class="fa-solid fa-chevron-left"></i>
+                <i
+                    class="fa-solid fa-chevron-left"
+                ></i>
 
             </div>
 
         </div>
 
 
+
+        <!-- إثبات دخل -->
 
         <div
             class="service-card"
@@ -1112,23 +1148,36 @@
 
             <div class="service-icon">
 
-                <i class="fa-solid fa-file-signature"></i>
+                <i
+                    class="fa-solid fa-file-signature"
+                ></i>
 
             </div>
 
+
             <div class="service-info">
 
-                <h3>إثبات دخل</h3>
+                <h3>
+
+                    إثبات دخل
+
+                </h3>
+
 
                 <p>
+
                     تقديم مستندات إثبات الدخل.
+
                 </p>
 
             </div>
 
+
             <div class="service-arrow">
 
-                <i class="fa-solid fa-chevron-left"></i>
+                <i
+                    class="fa-solid fa-chevron-left"
+                ></i>
 
             </div>
 
@@ -1159,102 +1208,29 @@
         </h2>
 
 
+        <div class="selected-service">
 
-        <!-- الخدمة المختارة -->
-
-        <div class="form-group">
 
             <label>
+
                 نوع الخدمة
+
             </label>
+
 
             <div
                 id="serviceName"
-                class="selected-service-box"
+                class="service-selected-box"
             >
 
                 لم يتم اختيار خدمة
 
             </div>
 
-        </div>
-
-
-
-        <!-- الاسم -->
-
-        <div class="form-group">
-
-            <label for="name">
-                الاسم الكامل
-            </label>
-
-            <input
-                type="text"
-                id="name"
-                placeholder="اكتب اسمك الكامل"
-                required
-            >
 
         </div>
 
 
-
-        <!-- الهاتف -->
-
-        <div class="form-group">
-
-            <label for="phone">
-                رقم الهاتف
-            </label>
-
-            <input
-                type="tel"
-                id="phone"
-                placeholder="مثال: 09XXXXXXXX"
-                required
-            >
-
-        </div>
-
-
-
-        <!-- رقم الحساب -->
-
-        <div class="form-group">
-
-            <label for="accountNumber">
-                رقم الحساب
-            </label>
-
-            <input
-                type="text"
-                id="accountNumber"
-                placeholder="اكتب رقم الحساب"
-            >
-
-        </div>
-
-
-
-        <!-- التفاصيل -->
-
-        <div class="form-group">
-
-            <label for="details">
-                تفاصيل الطلب
-            </label>
-
-            <textarea
-                id="details"
-                placeholder="اكتب تفاصيل المشكلة أو الطلب هنا..."
-            ></textarea>
-
-        </div>
-
-
-
-        <!-- زر الإرسال -->
 
         <button
             type="button"
@@ -1263,15 +1239,14 @@
             onclick="submitRequest()"
         >
 
-            <i class="fa-solid fa-paper-plane"></i>
+            <i
+                class="fa-solid fa-paper-plane"
+            ></i>
 
             إرسال الطلب
 
         </button>
 
-
-
-        <!-- الرسالة -->
 
         <div
             id="message"
@@ -1304,10 +1279,11 @@
 
 <script>
 
-
     // الخدمة المختارة
-
     let selectedServiceId = null;
+
+    // اسم الخدمة المختارة
+    let selectedServiceName = "";
 
 
     // =========================
@@ -1319,9 +1295,16 @@
         serviceName
     ) {
 
+        // حفظ رقم الخدمة
         selectedServiceId =
             serviceId;
 
+        // حفظ اسم الخدمة
+        selectedServiceName =
+            serviceName;
+
+
+        // عناصر الصفحة
 
         const form =
             document.getElementById(
@@ -1347,27 +1330,36 @@
             );
 
 
+        // عرض اسم الخدمة
+
         serviceInput.innerText =
             serviceName;
 
+
+        // تغيير العنوان
 
         formTitle.innerText =
             "تقديم طلب - " +
             serviceName;
 
 
+        // مسح الرسالة القديمة
+
         message.className =
             "message";
-
 
         message.innerText =
             "";
 
 
+        // إظهار النموذج
+
         form.classList.add(
             "show"
         );
 
+
+        // النزول للنموذج
 
         form.scrollIntoView({
 
@@ -1385,10 +1377,10 @@
 
     // =========================
     // إرسال الطلب
+    // الانتقال إلى success.html
     // =========================
 
-    async function submitRequest() {
-
+    function submitRequest() {
 
         // التأكد من اختيار الخدمة
 
@@ -1397,8 +1389,11 @@
         ) {
 
             showMessage(
+
                 "يرجى اختيار الخدمة أولاً",
+
                 "error"
+
             );
 
             return;
@@ -1406,201 +1401,29 @@
         }
 
 
-        // قراءة البيانات
+        // تجهيز رابط صفحة النجاح
 
-        const name =
-            document
-                .getElementById("name")
-                .value
-                .trim();
+        const successPage =
 
+            "success.html" +
 
-        const phone =
-            document
-                .getElementById("phone")
-                .value
-                .trim();
+            "?serviceId=" +
 
+            encodeURIComponent(
+                selectedServiceId
+            ) +
 
-        const accountNumber =
-            document
-                .getElementById("accountNumber")
-                .value
-                .trim();
+            "&serviceName=" +
 
-
-        const details =
-            document
-                .getElementById("details")
-                .value
-                .trim();
-
-
-
-        // التحقق من الاسم
-
-        if (!name) {
-
-            showMessage(
-                "يرجى إدخال الاسم الكامل",
-                "error"
-            );
-
-            return;
-
-        }
-
-
-
-        // التحقق من الهاتف
-
-        if (!phone) {
-
-            showMessage(
-                "يرجى إدخال رقم الهاتف",
-                "error"
-            );
-
-            return;
-
-        }
-
-
-
-        // زر الإرسال
-
-        const submitBtn =
-            document.getElementById(
-                "submitBtn"
+            encodeURIComponent(
+                selectedServiceName
             );
 
 
-        submitBtn.disabled =
-            true;
+        // الانتقال إلى success.html
 
-
-        submitBtn.innerHTML =
-            '<i class="fa-solid fa-spinner fa-spin"></i> جاري إرسال الطلب...';
-
-
-
-        try {
-
-
-            // إرسال البيانات للسيرفر
-
-            const response =
-                await fetch(
-                    "/api/requests",
-                    {
-
-                        method:
-                            "POST",
-
-                        headers: {
-
-                            "Content-Type":
-                                "application/json"
-
-                        },
-
-                        body:
-                            JSON.stringify({
-
-                                serviceId:
-                                    selectedServiceId,
-
-                                name:
-                                    name,
-
-                                phone:
-                                    phone,
-
-                                accountNumber:
-                                    accountNumber,
-
-                                details:
-                                    details
-
-                            })
-
-                    }
-                );
-
-
-
-            // قراءة رد السيرفر
-
-            const data =
-                await response.json();
-
-
-
-            // نجاح الإرسال
-
-            if (
-                response.ok &&
-                data.success
-            ) {
-
-
-                /*
-                 * الانتقال إلى صفحة النجاح
-                 * يجب أن يكون success.html
-                 * في نفس مجلد index.html
-                 */
-
-                window.location.href =
-                    "success.html";
-
-
-                return;
-
-            }
-
-
-
-            // في حالة وجود خطأ
-
-            showMessage(
-
-                data.message ||
-                "حدث خطأ أثناء إرسال الطلب",
-
-                "error"
-
-            );
-
-
-        } catch (error) {
-
-
-            console.error(
-                "Submit Error:",
-                error
-            );
-
-
-            showMessage(
-
-                "تعذر الاتصال بالخادم. حاول مرة أخرى.",
-
-                "error"
-
-            );
-
-
-        } finally {
-
-
-            submitBtn.disabled =
-                false;
-
-
-            submitBtn.innerHTML =
-                '<i class="fa-solid fa-paper-plane"></i> إرسال الطلب';
-
-        }
+        window.location.href =
+            successPage;
 
     }
 
@@ -1614,7 +1437,6 @@
         text,
         type
     ) {
-
 
         const message =
             document.getElementById(
@@ -1631,7 +1453,6 @@
             type;
 
     }
-
 
 </script>
 
