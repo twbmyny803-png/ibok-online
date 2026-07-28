@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 // ========================================
-// تقديم الملفات الموجودة في المجلد الرئيسي
+// تقديم ملفات الموقع
 // index.html موجود بجانب server.js
 // ========================================
 
@@ -79,8 +79,9 @@ const services = [
 
 
 // ========================================
-// تخزين الطلبات مؤقتاً في الذاكرة
-// ملاحظة: الطلبات ستختفي عند إعادة تشغيل السيرفر
+// تخزين الطلبات مؤقتاً
+// ملاحظة: الطلبات تختفي عند إعادة تشغيل Render
+// لاحقاً نربط قاعدة بيانات
 // ========================================
 
 let requests = [];
@@ -112,6 +113,7 @@ app.get("/api/services", (req, res) => {
 // ========================================
 
 app.get("/api/services/:id", (req, res) => {
+
   const id = Number(req.params.id);
 
   const service = services.find(
@@ -129,65 +131,96 @@ app.get("/api/services/:id", (req, res) => {
     success: true,
     service: service
   });
+
 });
 
 
 // ========================================
 // API إرسال طلب جديد
+// المستخدم يرسل فقط الخدمة المختارة
 // ========================================
 
 app.post("/api/requests", (req, res) => {
 
   const {
     serviceId,
-    serviceName,
-    name,
-    phone,
-    accountNumber,
-    details
+    serviceName
   } = req.body;
 
 
-  // التحقق من البيانات الأساسية
+  // ========================================
+  // التحقق من اختيار الخدمة
+  // ========================================
 
-  if (!name || !phone) {
+  if (!serviceId && !serviceName) {
+
     return res.status(400).json({
+
       success: false,
-      message: "يرجى إدخال الاسم الكامل ورقم الهاتف"
+
+      message: "يرجى اختيار الخدمة أولاً"
+
     });
+
   }
 
 
-  // البحث عن الخدمة بواسطة ID إذا تم إرساله
+  // ========================================
+  // البحث عن الخدمة
+  // ========================================
 
   let selectedService = null;
+
+
+  // البحث بواسطة ID
 
   if (serviceId) {
 
     selectedService = services.find(
-      item => item.id === Number(serviceId)
-    );
 
-    if (!selectedService) {
-      return res.status(404).json({
-        success: false,
-        message: "الخدمة المطلوبة غير موجودة"
-      });
-    }
+      item =>
+        item.id === Number(serviceId)
+
+    );
 
   }
 
 
-  // اسم الخدمة
-  // يدعم أيضاً index.html الحالي الذي يرسل اسم الخدمة
+  // إذا لم يتم العثور عليها بواسطة ID
+  // يتم البحث بواسطة اسم الخدمة
 
-  const finalServiceName =
-    selectedService?.name ||
-    serviceName ||
-    "غير محددة";
+  if (!selectedService && serviceName) {
+
+    selectedService = services.find(
+
+      item =>
+        item.name === serviceName
+
+    );
+
+  }
 
 
+  // ========================================
+  // التأكد أن الخدمة موجودة
+  // ========================================
+
+  if (!selectedService) {
+
+    return res.status(404).json({
+
+      success: false,
+
+      message: "الخدمة المطلوبة غير موجودة"
+
+    });
+
+  }
+
+
+  // ========================================
   // إنشاء الطلب
+  // ========================================
 
   const newRequest = {
 
@@ -197,26 +230,10 @@ app.post("/api/requests", (req, res) => {
         : 1,
 
     serviceId:
-      selectedService?.id || null,
+      selectedService.id,
 
     serviceName:
-      finalServiceName,
-
-    name:
-      name.trim(),
-
-    phone:
-      phone.trim(),
-
-    accountNumber:
-      accountNumber
-        ? accountNumber.trim()
-        : "",
-
-    details:
-      details
-        ? details.trim()
-        : "",
+      selectedService.name,
 
     status:
       "جديد",
@@ -227,12 +244,16 @@ app.post("/api/requests", (req, res) => {
   };
 
 
+  // ========================================
   // حفظ الطلب
+  // ========================================
 
   requests.push(newRequest);
 
 
+  // ========================================
   // إرسال النتيجة
+  // ========================================
 
   res.status(201).json({
 
@@ -280,9 +301,13 @@ app.get("/api/admin/requests/:id", (req, res) => {
   const id =
     Number(req.params.id);
 
+
   const request =
     requests.find(
-      item => item.id === id
+
+      item =>
+        item.id === id
+
     );
 
 
@@ -321,6 +346,7 @@ app.patch("/api/admin/requests/:id", (req, res) => {
   const id =
     Number(req.params.id);
 
+
   const {
     status
   } = req.body;
@@ -328,7 +354,10 @@ app.patch("/api/admin/requests/:id", (req, res) => {
 
   const request =
     requests.find(
-      item => item.id === id
+
+      item =>
+        item.id === id
+
     );
 
 
@@ -346,6 +375,8 @@ app.patch("/api/admin/requests/:id", (req, res) => {
   }
 
 
+  // تحديث الحالة
+
   if (status) {
 
     request.status =
@@ -354,110 +385,4 @@ app.patch("/api/admin/requests/:id", (req, res) => {
   }
 
 
-  res.json({
-
-    success: true,
-
-    message:
-      "تم تحديث حالة الطلب",
-
-    request:
-      request
-
-  });
-
-});
-
-
-// ========================================
-// API حذف طلب
-// للأدمن
-// ========================================
-
-app.delete("/api/admin/requests/:id", (req, res) => {
-
-  const id =
-    Number(req.params.id);
-
-
-  const requestIndex =
-    requests.findIndex(
-      item => item.id === id
-    );
-
-
-  if (requestIndex === -1) {
-
-    return res.status(404).json({
-
-      success: false,
-
-      message:
-        "الطلب غير موجود"
-
-    });
-
-  }
-
-
-  requests.splice(
-    requestIndex,
-    1
-  );
-
-
-  res.json({
-
-    success: true,
-
-    message:
-      "تم حذف الطلب بنجاح"
-
-  });
-
-});
-
-
-// ========================================
-// معالجة الروابط غير الموجودة
-// ========================================
-
-app.use((req, res) => {
-
-  // إذا كان الطلب API
-  if (req.path.startsWith("/api/")) {
-
-    return res.status(404).json({
-
-      success: false,
-
-      message:
-        "رابط API غير موجود"
-
-    });
-
-  }
-
-
-  // أي صفحة غير موجودة
-
-  res.status(404).send("Not Found");
-
-});
-
-
-// ========================================
-// تشغيل السيرفر
-// ========================================
-
-app.listen(
-  PORT,
-  "0.0.0.0",
-  () => {
-
-    console.log(
-      `iBOK Server is running on port ${PORT}`
-    );
-
-  }
-);
+  res
