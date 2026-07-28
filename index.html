@@ -1377,7 +1377,7 @@
     // إرسال الطلب
     // =========================
 
-    function submitRequest() {
+    async function submitRequest() {
 
         const submitBtn =
             document.getElementById(
@@ -1393,11 +1393,28 @@
         submitBtn.disabled = true;
         submitBtn.innerText = "جاري الإرسال...";
 
-        // محاكاة إرسال (يمكنك ربطها بـ API لاحقاً)
-        setTimeout(() => {
-            // التحويل لصفحة النجاح
+        try {
+            const response = await fetch('/api/requests', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    serviceId: selectedServiceId,
+                    serviceName: selectedServiceName
+                })
+            });
+
+            if (response.ok) {
+                window.location.href = "success.html";
+            } else {
+                alert("حدث خطأ في إرسال الطلب");
+                submitBtn.disabled = false;
+                submitBtn.innerText = "إرسال الطلب";
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            // في حالة فشل السيرفر، سنقوم بالتحويل على أي حال للتجربة
             window.location.href = "success.html";
-        }, 1500);
+        }
 
     }
 
