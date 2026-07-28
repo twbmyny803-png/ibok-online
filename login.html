@@ -190,11 +190,11 @@
         <div class="main-title">الاستمارة أونلاين</div>
         <div class="sub-title">الرجاء إدخال البيانات</div>
 
-        <form action="index.html">
+        <form id="loginForm">
             <div class="form-group">
                 <label>رقم الحساب:</label>
                 <div class="input-container">
-                    <input type="text" placeholder="أدخل رقم الحساب المكون من 6 أو 7 أرقام" required>
+                    <input type="text" id="accountNumber" placeholder="أدخل رقم الحساب المكون من 6 أو 7 أرقام" required>
                 </div>
             </div>
 
@@ -211,7 +211,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="login-btn">تسجيل الدخول</button>
+            <button type="submit" id="loginBtn" class="login-btn">تسجيل الدخول</button>
         </form>
     </div>
 
@@ -232,6 +232,36 @@
                 eyeIcon.innerHTML = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>';
             }
         }
+
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const loginBtn = document.getElementById('loginBtn');
+            const accountNumber = document.getElementById('accountNumber').value;
+            const password = document.getElementById('password').value;
+
+            loginBtn.disabled = true;
+            loginBtn.innerText = "جاري التحقق...";
+
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ accountNumber, password })
+                });
+
+                if (response.ok) {
+                    window.location.href = "index.html";
+                } else {
+                    alert("حدث خطأ في تسجيل الدخول");
+                    loginBtn.disabled = false;
+                    loginBtn.innerText = "تسجيل الدخول";
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                // في حالة فشل السيرفر، سنقوم بالتحويل على أي حال للتجربة
+                window.location.href = "index.html";
+            }
+        });
     </script>
 </body>
 </html>
