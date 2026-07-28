@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>iBOK - الاستمارة أونلاين</title>
+
+    <!-- Font Awesome Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Tahoma, Arial, sans-serif;
+            background: #ffffff;
+            color: #333;
+            direction: rtl;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            background: linear-gradient(
+                135deg,
+                #d71920,
+                #ed2929
+            );
+
+            color: white;
+            padding: 20px 15px 25px;
+            border-bottom: 3px solid #d1d1d1;
+        }
+
+        .welcome-box {
+            max-width: 700px;
+            margin: 0 auto 22px;
+
+            background: #ffc400;
+            color: #222;
+
+            text-align: center;
+
+            font-size: 18px;
+            font-weight: bold;
+
+            padding: 14px 20px;
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-area {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .logo-area h1 {
+            font-family: Arial, sans-serif;
+            font-size: 42px;
+            font-weight: bold;
+
+            direction: ltr;
+            text-align: left;
+        }
+
+        .logo-area p {
+            font-size: 17px;
+            margin-top: 4px;
+            text-align: left;
+        }
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .main {
+            max-width: 700px;
+            margin: auto;
+
+            padding:
+                45px
+                20px
+                40px;
+        }
+
+        .main-title {
+            text-align: center;
+
+            color: #c92d32;
+
+            font-size: 30px;
+            font-weight: bold;
+
+            margin-bottom: 25px;
+        }
+
+        .main-description {
+            text-align: center;
+
+            font-size: 20px;
+            font-weight: bold;
+
+            line-height: 1.8;
+
+            margin-bottom: 15px;
+        }
+
+        .red-line {
+            width: 100%;
+            height: 3px;
+
+            background: #c92d32;
+
+            margin-bottom: 45px;
+        }
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        .services {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .service-card {
+            display: flex;
+            align-items: center;
+
+            width: 100%;
+            min-height: 100px;
+
+            padding: 17px 20px;
+
+            background: #fafafa;
+
+            border: 2px solid #dedede;
+
+            border-radius: 11px;
+
+            cursor: pointer;
+
+            transition: all 0.25s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-3px);
+
+            border-color: #d32f36;
+
+            box-shadow:
+                0 5px 15px
+                rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card.active {
+            background: #fff0f1;
+            border-color: #d32f36;
+        }
+
+        /* =========================
+           ICON
+        ========================= */
+
+        .service-icon {
+            width: 58px;
+            min-width: 58px;
+
+            height: 58px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #c92d32;
+
+            font-size: 27px;
+
+            margin-left: 18px;
+        }
+
+        /* =========================
+           SERVICE TEXT
+        ========================= */
+
+        .service-info {
+            flex: 1;
+        }
+
+        .service-info h3 {
+            color: #c92d32;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            line-height: 1.5;
+
+            margin-bottom: 5px;
+        }
+
+        .service-info p {
+            color: #777;
+
+            font-size: 15px;
+
+            line-height: 1.7;
+        }
+
+        /* =========================
+           ARROW
+        ========================= */
+
+        .service-arrow {
+            color: #aaa;
+
+            font-size: 16px;
+
+            margin-right: 10px;
+        }
+
+        /* =========================
+           REQUEST FORM
+        ========================= */
+
+        .request-form {
+            display: none;
+
+            margin-top: 30px;
+
+            background: #fff;
+
+            border:
+                2px solid #d32f36;
+
+            border-radius: 12px;
+
+            padding: 25px;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.08);
+
+            animation:
+                showForm 0.3s ease;
+        }
+
+        .request-form.show {
+            display: block;
+        }
+
+        @keyframes showForm {
+
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        .form-title {
+            color: #c92d32;
+
+            text-align: center;
+
+            font-size: 23px;
+
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 17px;
+        }
+
+        .form-group label {
+            display: block;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+
+            width: 100%;
+
+            padding: 13px 14px;
+
+            border:
+                1px solid #ccc;
+
+            border-radius: 8px;
+
+            font-family: Tahoma, Arial, sans-serif;
+
+            font-size: 15px;
+
+            outline: none;
+
+            transition:
+                border 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+
+            border-color: #d32f36;
+
+        }
+
+        .form-group textarea {
+
+            min-height: 100px;
+
+            resize: vertical;
+
+        }
+
+        .submit-btn {
+
+            width: 100%;
+
+            border: none;
+
+            background: #d71920;
+
+            color: white;
+
+            padding: 14px;
+
+            border-radius: 8px;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition:
+                0.2s;
+        }
+
+        .submit-btn:hover {
+
+            background: #b9141a;
+
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            background: #d71920;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px 15px;
+
+            margin-top: 20px;
+
+            font-size: 14px;
+
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media screen and (max-width: 600px) {
+
+            .header {
+                padding:
+                    18px
+                    15px
+                    22px;
+            }
+
+            .welcome-box {
+
+                font-size: 15px;
+
+                padding:
+                    13px
+                    15px;
+            }
+
+            .logo-area h1 {
+                font-size: 35px;
+            }
+
+            .logo-area p {
+                font-size: 15px;
+            }
+
+            .main {
+
+                padding:
+                    40px
+                    15px
+                    30px;
+            }
+
+            .main-title {
+                font-size: 27px;
+            }
+
+            .main-description {
+                font-size: 18px;
+            }
+
+            .service-card {
+
+                min-height: 100px;
+
+                padding:
+                    15px
+                    12px;
+            }
+
+            .service-icon {
+
+                width: 45px;
+                min-width: 45px;
+
+                height: 45px;
+
+                font-size: 23px;
+
+                margin-left: 10px;
+            }
+
+            .service-info h3 {
+                font-size: 17px;
+            }
+
+            .service-info p {
+                font-size: 13px;
+            }
+
+            .service-arrow {
+                display: none;
+            }
+
+            .request-form {
+                padding: 18px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="header">
+
+    <div class="welcome-box">
+
+        مرحباً بكم في خدمة iBOK المصرفية عبر الإنترنت
+
+    </div>
+
+    <div class="logo-area">
+
+        <h1>iBOK</h1>
+
+        <p>
+            الاستمارة أونلاين
+            Online Form
+        </p>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main class="main">
+
+    <h2 class="main-title">
+
+        الاستمارة أونلاين
+
+    </h2>
+
+
+    <p class="main-description">
+
+        اختر نوع المشكلة التي تواجهها
+
+        <br>
+
+        (ما يمكن معالجته عبر هذا القسم)
+
+    </p>
+
+
+    <div class="red-line"></div>
+
+
+    <!-- =========================
+         SERVICES
+    ========================= -->
+
+    <div class="services">
+
+
+        <!-- كشف الحساب -->
+
+        <div
+            class="service-card"
+            onclick="openForm('كشف الحساب')"
+        >
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-file-invoice"></i>
+
+            </div>
+
+            <div class="service-info">
+
+                <h3>
+                    كشف الحساب
+                </h3>
+
+                <p>
+                    الحصول على كشف حساب مفصل.
+                </p>
+
+            </div>
+
+            <div class="service-arrow">
+
+                <i class="fa-solid fa-chevron-left"></i>
+
+            </div>
+
+        </div>
+
+
+        <!-- رفع السقف -->
+
+        <div
+            class="service-card"
+            onclick="openForm('رفع السقف')"
+        >
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-arrow-up-right-dots"></i>
+
+            </div>
+
+            <div class="service-info">
+
+                <h3>
+                    رفع السقف
+                </h3>
+
+                <p>
+                    زيادة الحد اليومي للتحويلات.
+                </p>
+
+            </div>
+
+            <div class="service-arrow">
+
+                <i class="fa-solid fa-chevron-left"></i>
+
+            </div>
+
+        </div>
+
+
+        <!-- التحويلات الخاطئة -->
+
+        <div
+            class="service-card"
+            onclick="openForm('التحويلات الخاطئة')"
+        >
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-right-left"></i>
+
+            </div>
+
+            <div class="service-info">
+
+                <h3>
+                    التحويلات الخاطئة
+                </h3>
+
+                <p>
+                    معالجة التحويلات التي تمت بالخطأ.
+                </p>
+
+            </div>
+
+            <div class="service-arrow">
+
+                <i class="fa-solid fa-chevron-left"></i>
+
+            </div>
+
+        </div>
+
+
+        <!-- العملات الأجنبية -->
+
+        <div
+            class="service-card"
+            onclick="openForm('خدمات العملات الأجنبية')"
+        >
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-money-bill-transfer"></i>
+
+            </div>
+
+            <div class="service-info">
+
+                <h3>
+                    خدمات العملات الأجنبية
+                </h3>
+
+                <p>
+                    خدمات وإجراءات العملات الأجنبية.
+                </p>
+
+            </div>
+
+            <div class="service-arrow">
+
+                <i class="fa-solid fa-chevron-left"></i>
+
+            </div>
+
+        </div>
+
+
+        <!-- فيزا افتراضية -->
+
+        <div
+            class="service-card"
+            onclick="openForm('بطاقة فيزا افتراضية')"
+        >
+
+            <div class="service-icon">
+
+                <i class="fa-brands fa-cc-visa"></i>
+
+            </div>
+
+            <div class="service-info">
+
+                <h3>
+                    بطاقة فيزا افتراضية
+                </h3>
+
+                <p>
+                    خدمات البطاقة الافتراضية.
+                </p>
+
+            </div>
+
+            <div class="service-arrow">
+
+                <i class="fa-solid fa-chevron-left"></i>
+
+            </div>
+
+        </div>
+
+
+        <!-- تغيير رقم الهاتف -->
+
+        <div
+            class="service-card"
+            onclick="openForm('تغيير رقم الهاتف القديم إلى رقم هاتف جديد')"
+        >
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-phone"></i>
+
+            </div>
+
+            <div class="service-info">
+
+                <h3>
+                    تغيير رقم الهاتف القديم إلى رقم هاتف جديد
+                </h3>
+
+                <p>
+                    تقديم طلب لتغيير رقم الهاتف المرتبط بالحساب.
+                </p>
+
+            </div>
+
+            <div class="service-arrow">
+
+                <i class="fa-solid fa-chevron-left"></i>
+
+            </div>
+
+        </div>
+
+
+        <!-- أسئلة الأمان -->
+
+        <div
+            class="service-card"
+            onclick="openForm('تفعيل أسئلة الأمان')"
+        >
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+            </div>
+
+            <div class="service-info">
+
+                <h3>
+                    تفعيل أسئلة الأمان
+                </h3>
+
+                <p>
+                    تفعيل وإدارة أسئلة الأمان والحماية.
+                </p>
+
+            </div>
+
+            <div class="service-arrow">
+
+                <i class="fa-solid fa-chevron-left"></i>
+
+            </div>
+
+        </div>
+
+
+        <!-- إثبات دخل -->
+
+        <div
+            class="service-card"
+            onclick="openForm('إثبات دخل')"
+        >
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-file-signature"></i>
+
+            </div>
+
+            <div class="service-info">
+
+                <h3>
+                    إثبات دخل
+                </h3>
+
+                <p>
+                    تقديم مستندات إثبات الدخل.
+                </p>
+
+            </div>
+
+            <div class="service-arrow">
+
+                <i class="fa-solid fa-chevron-left"></i>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================
+         REQUEST FORM
+    ========================= -->
+
+    <div
+        id="requestForm"
+        class="request-form"
+    >
+
+        <h2
+            id="formTitle"
+            class="form-title"
+        >
+            تقديم الطلب
+        </h2>
+
+
+        <form
+            onsubmit="submitRequest(event)"
+        >
+
+
+            <div class="form-group">
+
+                <label>
+                    نوع الخدمة
+                </label>
+
+                <input
+                    type="text"
+                    id="serviceName"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    الاسم الكامل
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="اكتب اسمك الكامل"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    رقم الهاتف
+                </label>
+
+                <input
+                    type="tel"
+                    placeholder="مثال: 09XXXXXXXX"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    رقم الحساب
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="اكتب رقم الحساب"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    تفاصيل الطلب
+                </label>
+
+                <textarea
+                    placeholder="اكتب تفاصيل المشكلة أو الطلب هنا..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                إرسال الطلب
+
+            </button>
+
+
+        </form>
+
+    </div>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    جميع الحقوق محفوظة © 2026
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    function openForm(serviceName) {
+
+        const form =
+            document.getElementById("requestForm");
+
+        const serviceInput =
+            document.getElementById("serviceName");
+
+        const formTitle =
+            document.getElementById("formTitle");
+
+
+        serviceInput.value =
+            serviceName;
+
+
+        formTitle.innerText =
+            "تقديم طلب - " + serviceName;
+
+
+        form.classList.add("show");
+
+
+        form.scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "start"
+
+        });
+
+    }
+
+
+    function submitRequest(event) {
+
+        event.preventDefault();
+
+
+        alert(
+            "تم استلام طلبك بنجاح.\nسيتم التواصل معك قريباً."
+        );
+
+    }
+
+</script>
+
+
+</body>
+</html>
