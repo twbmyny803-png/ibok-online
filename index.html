@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>iBOK - الاستمارة أونلاين</title>
 
-    <!-- Font Awesome Icons -->
+    <!-- Font Awesome -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -25,170 +31,274 @@
         }
 
         body {
-            font-family: Tahoma, Arial, sans-serif;
+
+            font-family:
+                Tahoma,
+                Arial,
+                sans-serif;
+
             background: #ffffff;
+
             color: #333;
+
             direction: rtl;
+
         }
+
 
         /* =========================
            HEADER
         ========================= */
 
         .header {
-            background: linear-gradient(
-                135deg,
-                #d71920,
-                #ed2929
-            );
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d71920,
+                    #ed2929
+                );
 
             color: white;
-            padding: 20px 15px 25px;
-            border-bottom: 3px solid #d1d1d1;
+
+            padding:
+                20px
+                15px
+                25px;
+
+            border-bottom:
+                3px solid #d1d1d1;
+
         }
 
+
         .welcome-box {
+
             max-width: 700px;
-            margin: 0 auto 22px;
+
+            margin:
+                0
+                auto
+                22px;
 
             background: #ffc400;
+
             color: #222;
 
             text-align: center;
 
             font-size: 18px;
+
             font-weight: bold;
 
-            padding: 14px 20px;
+            padding:
+                14px
+                20px;
 
             border-radius: 30px;
 
             box-shadow:
-                0 3px 8px rgba(0, 0, 0, 0.2);
+                0
+                3px
+                8px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.2
+                );
+
         }
+
 
         .logo-area {
+
             max-width: 700px;
+
             margin: auto;
+
         }
 
+
         .logo-area h1 {
+
             font-family: Arial, sans-serif;
+
             font-size: 42px;
+
             font-weight: bold;
 
             direction: ltr;
+
             text-align: left;
+
         }
 
+
         .logo-area p {
+
             font-size: 17px;
+
             margin-top: 4px;
+
             text-align: left;
+
         }
+
 
         /* =========================
            MAIN
         ========================= */
 
         .main {
+
             max-width: 700px;
+
             margin: auto;
 
             padding:
                 45px
                 20px
                 40px;
+
         }
 
+
         .main-title {
+
             text-align: center;
 
             color: #c92d32;
 
             font-size: 30px;
+
             font-weight: bold;
 
             margin-bottom: 25px;
+
         }
 
+
         .main-description {
+
             text-align: center;
 
             font-size: 20px;
+
             font-weight: bold;
 
             line-height: 1.8;
 
             margin-bottom: 15px;
+
         }
 
+
         .red-line {
+
             width: 100%;
+
             height: 3px;
 
             background: #c92d32;
 
             margin-bottom: 45px;
+
         }
+
 
         /* =========================
            SERVICES
         ========================= */
 
         .services {
+
             display: flex;
+
             flex-direction: column;
+
             gap: 14px;
+
         }
 
+
         .service-card {
+
             display: flex;
+
             align-items: center;
 
             width: 100%;
+
             min-height: 100px;
 
-            padding: 17px 20px;
+            padding:
+                17px
+                20px;
 
             background: #fafafa;
 
-            border: 2px solid #dedede;
+            border:
+                2px solid #dedede;
 
             border-radius: 11px;
 
             cursor: pointer;
 
-            transition: all 0.25s ease;
+            transition:
+                all
+                0.25s
+                ease;
+
         }
 
+
         .service-card:hover {
-            transform: translateY(-3px);
+
+            transform:
+                translateY(-3px);
 
             border-color: #d32f36;
 
             box-shadow:
-                0 5px 15px
-                rgba(0, 0, 0, 0.1);
+                0
+                5px
+                15px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.1
+                );
+
         }
 
+
         .service-card.active {
+
             background: #fff0f1;
+
             border-color: #d32f36;
+
         }
+
 
         /* =========================
            ICON
         ========================= */
 
         .service-icon {
+
             width: 58px;
+
             min-width: 58px;
 
             height: 58px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             color: #c92d32;
@@ -196,17 +306,23 @@
             font-size: 27px;
 
             margin-left: 18px;
+
         }
+
 
         /* =========================
            SERVICE TEXT
         ========================= */
 
         .service-info {
+
             flex: 1;
+
         }
 
+
         .service-info h3 {
+
             color: #c92d32;
 
             font-size: 20px;
@@ -216,33 +332,42 @@
             line-height: 1.5;
 
             margin-bottom: 5px;
+
         }
 
+
         .service-info p {
+
             color: #777;
 
             font-size: 15px;
 
             line-height: 1.7;
+
         }
+
 
         /* =========================
            ARROW
         ========================= */
 
         .service-arrow {
+
             color: #aaa;
 
             font-size: 16px;
 
             margin-right: 10px;
+
         }
+
 
         /* =========================
            REQUEST FORM
         ========================= */
 
         .request-form {
+
             display: none;
 
             margin-top: 30px;
@@ -257,93 +382,126 @@
             padding: 25px;
 
             box-shadow:
-                0 5px 20px
-                rgba(0, 0, 0, 0.08);
+                0
+                5px
+                20px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.08
+                );
 
             animation:
-                showForm 0.3s ease;
+                showForm
+                0.3s
+                ease;
+
         }
 
+
         .request-form.show {
+
             display: block;
+
         }
+
 
         @keyframes showForm {
 
             from {
+
                 opacity: 0;
-                transform: translateY(10px);
+
+                transform:
+                    translateY(10px);
+
             }
 
             to {
+
                 opacity: 1;
-                transform: translateY(0);
+
+                transform:
+                    translateY(0);
+
             }
 
         }
 
+
+        /* =========================
+           FORM TITLE
+        ========================= */
+
         .form-title {
+
             color: #c92d32;
 
             text-align: center;
 
-            font-size: 23px;
+            font-size: 28px;
 
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+
+            line-height: 1.5;
+
         }
 
-        .form-group {
-            margin-bottom: 17px;
+
+        /* =========================
+           SELECTED SERVICE
+        ========================= */
+
+        .selected-service {
+
+            margin-bottom: 25px;
+
         }
 
-        .form-group label {
+
+        .selected-service label {
+
             display: block;
 
-            font-size: 15px;
+            font-size: 18px;
 
             font-weight: bold;
 
-            margin-bottom: 7px;
+            margin-bottom: 10px;
+
         }
 
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
+
+        .service-selected-box {
 
             width: 100%;
 
-            padding: 13px 14px;
+            padding:
+                16px
+                18px;
+
+            background: #fafafa;
 
             border:
-                1px solid #ccc;
+                2px solid #ccc;
 
-            border-radius: 8px;
+            border-radius: 10px;
 
-            font-family: Tahoma, Arial, sans-serif;
+            color: #333;
 
-            font-size: 15px;
+            font-size: 18px;
 
-            outline: none;
+            font-weight: bold;
 
-            transition:
-                border 0.2s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-
-            border-color: #d32f36;
+            text-align: right;
 
         }
 
-        .form-group textarea {
 
-            min-height: 100px;
-
-            resize: vertical;
-
-        }
+        /* =========================
+           SUBMIT BUTTON
+        ========================= */
 
         .submit-btn {
 
@@ -355,11 +513,11 @@
 
             color: white;
 
-            padding: 14px;
+            padding: 16px;
 
-            border-radius: 8px;
+            border-radius: 9px;
 
-            font-size: 17px;
+            font-size: 19px;
 
             font-weight: bold;
 
@@ -367,13 +525,78 @@
 
             transition:
                 0.2s;
+
         }
+
 
         .submit-btn:hover {
 
             background: #b9141a;
 
         }
+
+
+        .submit-btn:disabled {
+
+            background: #999;
+
+            cursor: not-allowed;
+
+        }
+
+
+        /* =========================
+           MESSAGE
+        ========================= */
+
+        .message {
+
+            display: none;
+
+            margin-top: 18px;
+
+            padding: 14px;
+
+            border-radius: 8px;
+
+            text-align: center;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            line-height: 1.7;
+
+        }
+
+
+        .message.success {
+
+            display: block;
+
+            background: #e8f7ed;
+
+            color: #187a3d;
+
+            border:
+                1px solid #a9dfbb;
+
+        }
+
+
+        .message.error {
+
+            display: block;
+
+            background: #fff0f0;
+
+            color: #b00020;
+
+            border:
+                1px solid #efb0b0;
+
+        }
+
 
         /* =========================
            FOOTER
@@ -395,6 +618,7 @@
 
         }
 
+
         /* =========================
            MOBILE
         ========================= */
@@ -402,11 +626,14 @@
         @media screen and (max-width: 600px) {
 
             .header {
+
                 padding:
                     18px
                     15px
                     22px;
+
             }
+
 
             .welcome-box {
 
@@ -415,15 +642,23 @@
                 padding:
                     13px
                     15px;
+
             }
+
 
             .logo-area h1 {
+
                 font-size: 35px;
+
             }
 
+
             .logo-area p {
+
                 font-size: 15px;
+
             }
+
 
             .main {
 
@@ -431,15 +666,23 @@
                     40px
                     15px
                     30px;
+
             }
+
 
             .main-title {
+
                 font-size: 27px;
+
             }
 
+
             .main-description {
+
                 font-size: 18px;
+
             }
+
 
             .service-card {
 
@@ -448,11 +691,14 @@
                 padding:
                     15px
                     12px;
+
             }
+
 
             .service-icon {
 
                 width: 45px;
+
                 min-width: 45px;
 
                 height: 45px;
@@ -460,22 +706,56 @@
                 font-size: 23px;
 
                 margin-left: 10px;
+
             }
+
 
             .service-info h3 {
+
                 font-size: 17px;
+
             }
+
 
             .service-info p {
+
                 font-size: 13px;
+
             }
+
 
             .service-arrow {
+
                 display: none;
+
             }
 
+
             .request-form {
+
                 padding: 18px;
+
+            }
+
+
+            .form-title {
+
+                font-size: 23px;
+
+            }
+
+
+            .service-selected-box {
+
+                font-size: 16px;
+
+            }
+
+
+            .submit-btn {
+
+                font-size: 18px;
+
             }
 
         }
@@ -483,6 +763,7 @@
     </style>
 
 </head>
+
 
 <body>
 
@@ -499,13 +780,22 @@
 
     </div>
 
+
     <div class="logo-area">
 
-        <h1>iBOK</h1>
+        <h1>
+
+            iBOK
+
+        </h1>
+
 
         <p>
+
             الاستمارة أونلاين
+
             Online Form
+
         </p>
 
     </div>
@@ -513,11 +803,13 @@
 </header>
 
 
+
 <!-- =========================
      MAIN
 ========================= -->
 
 <main class="main">
+
 
     <h2 class="main-title">
 
@@ -540,6 +832,7 @@
     <div class="red-line"></div>
 
 
+
     <!-- =========================
          SERVICES
     ========================= -->
@@ -551,268 +844,363 @@
 
         <div
             class="service-card"
-            onclick="openForm('كشف الحساب')"
+            onclick="openForm(1, 'كشف الحساب')"
         >
 
             <div class="service-icon">
 
-                <i class="fa-solid fa-file-invoice"></i>
+                <i
+                    class="fa-solid fa-file-invoice"
+                ></i>
 
             </div>
+
 
             <div class="service-info">
 
                 <h3>
+
                     كشف الحساب
+
                 </h3>
 
+
                 <p>
+
                     الحصول على كشف حساب مفصل.
+
                 </p>
 
             </div>
 
+
             <div class="service-arrow">
 
-                <i class="fa-solid fa-chevron-left"></i>
+                <i
+                    class="fa-solid fa-chevron-left"
+                ></i>
 
             </div>
 
         </div>
+
 
 
         <!-- رفع السقف -->
 
         <div
             class="service-card"
-            onclick="openForm('رفع السقف')"
+            onclick="openForm(2, 'رفع السقف')"
         >
 
             <div class="service-icon">
 
-                <i class="fa-solid fa-arrow-up-right-dots"></i>
+                <i
+                    class="fa-solid fa-arrow-up-right-dots"
+                ></i>
 
             </div>
+
 
             <div class="service-info">
 
                 <h3>
+
                     رفع السقف
+
                 </h3>
 
+
                 <p>
+
                     زيادة الحد اليومي للتحويلات.
+
                 </p>
 
             </div>
 
+
             <div class="service-arrow">
 
-                <i class="fa-solid fa-chevron-left"></i>
+                <i
+                    class="fa-solid fa-chevron-left"
+                ></i>
 
             </div>
 
         </div>
+
 
 
         <!-- التحويلات الخاطئة -->
 
         <div
             class="service-card"
-            onclick="openForm('التحويلات الخاطئة')"
+            onclick="openForm(3, 'التحويلات الخاطئة')"
         >
 
             <div class="service-icon">
 
-                <i class="fa-solid fa-right-left"></i>
+                <i
+                    class="fa-solid fa-right-left"
+                ></i>
 
             </div>
+
 
             <div class="service-info">
 
                 <h3>
+
                     التحويلات الخاطئة
+
                 </h3>
 
+
                 <p>
+
                     معالجة التحويلات التي تمت بالخطأ.
+
                 </p>
 
             </div>
 
+
             <div class="service-arrow">
 
-                <i class="fa-solid fa-chevron-left"></i>
+                <i
+                    class="fa-solid fa-chevron-left"
+                ></i>
 
             </div>
 
         </div>
+
 
 
         <!-- العملات الأجنبية -->
 
         <div
             class="service-card"
-            onclick="openForm('خدمات العملات الأجنبية')"
+            onclick="openForm(4, 'خدمات العملات الأجنبية')"
         >
 
             <div class="service-icon">
 
-                <i class="fa-solid fa-money-bill-transfer"></i>
+                <i
+                    class="fa-solid fa-money-bill-transfer"
+                ></i>
 
             </div>
+
 
             <div class="service-info">
 
                 <h3>
+
                     خدمات العملات الأجنبية
+
                 </h3>
 
+
                 <p>
+
                     خدمات وإجراءات العملات الأجنبية.
+
                 </p>
 
             </div>
 
+
             <div class="service-arrow">
 
-                <i class="fa-solid fa-chevron-left"></i>
+                <i
+                    class="fa-solid fa-chevron-left"
+                ></i>
 
             </div>
 
         </div>
+
 
 
         <!-- فيزا افتراضية -->
 
         <div
             class="service-card"
-            onclick="openForm('بطاقة فيزا افتراضية')"
+            onclick="openForm(5, 'بطاقة فيزا افتراضية')"
         >
 
             <div class="service-icon">
 
-                <i class="fa-brands fa-cc-visa"></i>
+                <i
+                    class="fa-brands fa-cc-visa"
+                ></i>
 
             </div>
+
 
             <div class="service-info">
 
                 <h3>
+
                     بطاقة فيزا افتراضية
+
                 </h3>
 
+
                 <p>
+
                     خدمات البطاقة الافتراضية.
+
                 </p>
 
             </div>
 
+
             <div class="service-arrow">
 
-                <i class="fa-solid fa-chevron-left"></i>
+                <i
+                    class="fa-solid fa-chevron-left"
+                ></i>
 
             </div>
 
         </div>
+
 
 
         <!-- تغيير رقم الهاتف -->
 
         <div
             class="service-card"
-            onclick="openForm('تغيير رقم الهاتف القديم إلى رقم هاتف جديد')"
+            onclick="openForm(6, 'تغيير رقم الهاتف القديم إلى رقم هاتف جديد')"
         >
 
             <div class="service-icon">
 
-                <i class="fa-solid fa-phone"></i>
+                <i
+                    class="fa-solid fa-phone"
+                ></i>
 
             </div>
+
 
             <div class="service-info">
 
                 <h3>
+
                     تغيير رقم الهاتف القديم إلى رقم هاتف جديد
+
                 </h3>
 
+
                 <p>
+
                     تقديم طلب لتغيير رقم الهاتف المرتبط بالحساب.
+
                 </p>
 
             </div>
 
+
             <div class="service-arrow">
 
-                <i class="fa-solid fa-chevron-left"></i>
+                <i
+                    class="fa-solid fa-chevron-left"
+                ></i>
 
             </div>
 
         </div>
+
 
 
         <!-- أسئلة الأمان -->
 
         <div
             class="service-card"
-            onclick="openForm('تفعيل أسئلة الأمان')"
+            onclick="openForm(7, 'تفعيل أسئلة الأمان')"
         >
 
             <div class="service-icon">
 
-                <i class="fa-solid fa-shield-halved"></i>
+                <i
+                    class="fa-solid fa-shield-halved"
+                ></i>
 
             </div>
+
 
             <div class="service-info">
 
                 <h3>
+
                     تفعيل أسئلة الأمان
+
                 </h3>
 
+
                 <p>
+
                     تفعيل وإدارة أسئلة الأمان والحماية.
+
                 </p>
 
             </div>
 
+
             <div class="service-arrow">
 
-                <i class="fa-solid fa-chevron-left"></i>
+                <i
+                    class="fa-solid fa-chevron-left"
+                ></i>
 
             </div>
 
         </div>
 
 
+
         <!-- إثبات دخل -->
 
         <div
             class="service-card"
-            onclick="openForm('إثبات دخل')"
+            onclick="openForm(8, 'إثبات دخل')"
         >
 
             <div class="service-icon">
 
-                <i class="fa-solid fa-file-signature"></i>
+                <i
+                    class="fa-solid fa-file-signature"
+                ></i>
 
             </div>
+
 
             <div class="service-info">
 
                 <h3>
+
                     إثبات دخل
+
                 </h3>
 
+
                 <p>
+
                     تقديم مستندات إثبات الدخل.
+
                 </p>
 
             </div>
 
+
             <div class="service-arrow">
 
-                <i class="fa-solid fa-chevron-left"></i>
+                <i
+                    class="fa-solid fa-chevron-left"
+                ></i>
 
             </div>
 
@@ -820,6 +1208,7 @@
 
 
     </div>
+
 
 
     <!-- =========================
@@ -831,110 +1220,68 @@
         class="request-form"
     >
 
+
         <h2
             id="formTitle"
             class="form-title"
         >
+
             تقديم الطلب
+
         </h2>
 
 
-        <form
-            onsubmit="submitRequest(event)"
-        >
+        <div class="selected-service">
 
 
-            <div class="form-group">
+            <label>
 
-                <label>
-                    نوع الخدمة
-                </label>
+                نوع الخدمة
 
-                <input
-                    type="text"
-                    id="serviceName"
-                    readonly
-                >
-
-            </div>
+            </label>
 
 
-            <div class="form-group">
-
-                <label>
-                    الاسم الكامل
-                </label>
-
-                <input
-                    type="text"
-                    placeholder="اكتب اسمك الكامل"
-                    required
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    رقم الهاتف
-                </label>
-
-                <input
-                    type="tel"
-                    placeholder="مثال: 09XXXXXXXX"
-                    required
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    رقم الحساب
-                </label>
-
-                <input
-                    type="text"
-                    placeholder="اكتب رقم الحساب"
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    تفاصيل الطلب
-                </label>
-
-                <textarea
-                    placeholder="اكتب تفاصيل المشكلة أو الطلب هنا..."
-                    required
-                ></textarea>
-
-            </div>
-
-
-            <button
-                type="submit"
-                class="submit-btn"
+            <div
+                id="serviceName"
+                class="service-selected-box"
             >
 
-                <i class="fa-solid fa-paper-plane"></i>
+                لم يتم اختيار خدمة
 
-                إرسال الطلب
-
-            </button>
+            </div>
 
 
-        </form>
+        </div>
+
+
+
+        <button
+            type="button"
+            id="submitBtn"
+            class="submit-btn"
+            onclick="submitRequest()"
+        >
+
+            <i
+                class="fa-solid fa-paper-plane"
+            ></i>
+
+            إرسال الطلب
+
+        </button>
+
+
+        <div
+            id="message"
+            class="message"
+        ></div>
+
 
     </div>
 
 
 </main>
+
 
 
 <!-- =========================
@@ -948,59 +1295,294 @@
 </footer>
 
 
+
 <!-- =========================
      JAVASCRIPT
 ========================= -->
 
 <script>
 
-    function openForm(serviceName) {
+
+    // الخدمة المختارة
+
+    let selectedServiceId = null;
+
+
+    // =========================
+    // اختيار الخدمة
+    // =========================
+
+    function openForm(
+        serviceId,
+        serviceName
+    ) {
+
+
+        // حفظ رقم الخدمة
+
+        selectedServiceId =
+            serviceId;
+
+
+        // عناصر الصفحة
 
         const form =
-            document.getElementById("requestForm");
+            document.getElementById(
+                "requestForm"
+            );
+
 
         const serviceInput =
-            document.getElementById("serviceName");
+            document.getElementById(
+                "serviceName"
+            );
+
 
         const formTitle =
-            document.getElementById("formTitle");
+            document.getElementById(
+                "formTitle"
+            );
 
 
-        serviceInput.value =
+        const message =
+            document.getElementById(
+                "message"
+            );
+
+
+        // عرض اسم الخدمة
+
+        serviceInput.innerText =
             serviceName;
 
 
+        // تغيير العنوان
+
         formTitle.innerText =
-            "تقديم طلب - " + serviceName;
+            "تقديم طلب - " +
+            serviceName;
 
 
-        form.classList.add("show");
+        // مسح الرسالة القديمة
 
+        message.className =
+            "message";
+
+
+        message.innerText =
+            "";
+
+
+        // إظهار النموذج
+
+        form.classList.add(
+            "show"
+        );
+
+
+        // النزول للنموذج
 
         form.scrollIntoView({
 
-            behavior: "smooth",
+            behavior:
+                "smooth",
 
-            block: "start"
+            block:
+                "start"
 
         });
 
     }
 
 
-    function submitRequest(event) {
 
-        event.preventDefault();
+    // =========================
+    // إرسال الطلب
+    // =========================
+
+    async function submitRequest() {
 
 
-        alert(
-            "تم استلام طلبك بنجاح.\nسيتم التواصل معك قريباً."
-        );
+        // التأكد من اختيار خدمة
+
+        if (
+            !selectedServiceId
+        ) {
+
+            showMessage(
+                "يرجى اختيار الخدمة أولاً",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        // زر الإرسال
+
+        const submitBtn =
+            document.getElementById(
+                "submitBtn"
+            );
+
+
+        // تعطيل الزر
+
+        submitBtn.disabled =
+            true;
+
+
+        submitBtn.innerHTML =
+
+            '<i class="fa-solid fa-spinner fa-spin"></i> جاري إرسال الطلب...';
+
+
+
+        try {
+
+
+            // إرسال الطلب إلى السيرفر
+
+            const response =
+                await fetch(
+                    "/api/requests",
+                    {
+
+                        method:
+                            "POST",
+
+                        headers: {
+
+                            "Content-Type":
+                                "application/json"
+
+                        },
+
+                        body:
+                            JSON.stringify({
+
+                                serviceId:
+                                    selectedServiceId
+
+                            })
+
+                    }
+                );
+
+
+
+            // قراءة الرد
+
+            const data =
+                await response.json();
+
+
+
+            // في حالة نجاح الطلب
+
+            if (
+                response.ok &&
+                data.success
+            ) {
+
+
+                showMessage(
+
+                    "تم إرسال طلبك بنجاح ✅<br>سيتم التواصل معك قريباً.",
+
+                    "success"
+
+                );
+
+
+                // إلغاء الاختيار
+
+                selectedServiceId =
+                    null;
+
+
+            } else {
+
+
+                showMessage(
+
+                    data.message ||
+                    "حدث خطأ أثناء إرسال الطلب",
+
+                    "error"
+
+                );
+
+            }
+
+
+        } catch (error) {
+
+
+            console.error(
+                error
+            );
+
+
+            showMessage(
+
+                "تعذر الاتصال بالخادم. حاول مرة أخرى.",
+
+                "error"
+
+            );
+
+
+        } finally {
+
+
+            // إعادة الزر لوضعه الطبيعي
+
+            submitBtn.disabled =
+                false;
+
+
+            submitBtn.innerHTML =
+
+                '<i class="fa-solid fa-paper-plane"></i> إرسال الطلب';
+
+        }
 
     }
+
+
+
+    // =========================
+    // عرض الرسائل
+    // =========================
+
+    function showMessage(
+        text,
+        type
+    ) {
+
+
+        const message =
+            document.getElementById(
+                "message"
+            );
+
+
+        message.innerHTML =
+            text;
+
+
+        message.className =
+            "message " +
+            type;
+
+    }
+
 
 </script>
 
 
 </body>
+
 </html>
